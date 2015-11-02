@@ -13,12 +13,12 @@ import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.Scroller;
 
-import com.google.common.collect.Maps;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
 import org.joda.time.LocalDateTime;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -100,8 +100,8 @@ public class EPG extends ViewGroup {
         mMeasuringRect = new Rect();
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mGestureDetector = new GestureDetector(context, new OnGestureListener());
-        mChannelImageCache = Maps.newHashMap();
-        mChannelImageTargetCache = Maps.newHashMap();
+        mChannelImageCache = new HashMap<>();
+        mChannelImageTargetCache = new HashMap<>();
 
         // Adding some friction that makes the epg less flappy.
         mScroller = new Scroller(context);

@@ -1,7 +1,6 @@
 package se.kmdev.tvepg.epg.misc;
 
-import com.google.common.collect.Lists;
-
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -15,12 +14,12 @@ import se.kmdev.tvepg.epg.domain.EPGEvent;
  */
 public class EPGDataImpl implements EPGData {
 
-    private List<EPGChannel> channels = Lists.newArrayList();
-    private List<List<EPGEvent>> events = Lists.newArrayList();
+    private List<EPGChannel> channels = new ArrayList<>();
+    private List<List<EPGEvent>> events = new ArrayList<>();
 
     public EPGDataImpl(Map<EPGChannel, List<EPGEvent>> data) {
-        channels = Lists.newArrayList(data.keySet());
-        events = Lists.newArrayList(data.values());
+        channels = new ArrayList<>(data.keySet());
+        events = new ArrayList<>(data.values());
     }
 
     public EPGChannel getChannel(int position) {
